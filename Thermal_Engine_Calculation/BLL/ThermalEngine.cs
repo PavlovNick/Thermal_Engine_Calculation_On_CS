@@ -309,5 +309,433 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         #endregion
+
+        #region complex properties
+
+        /// <summary>
+        /// Газова стала повітря
+        /// </summary>
+        public double HazovaStalaPovitrya 
+        {
+            get { return UniversalnaHazovaStala / MoleculyarnaMasaPovitrya; }  
+        }
+
+        /// <summary>
+        /// Густина повітря
+        /// </summary>
+        public double HustynaPovitrya
+        {
+            get { return (AirPressure * 1000000) / (HazovaStalaPovitrya * AirTemperature); }
+        }
+
+        /// <summary>
+        /// Втрати тиску при впуску
+        /// </summary>
+        public double VtratyTyskuPryVpusku
+        {
+            get { return (CoefVtratyTysku * (Math.Pow( ShvydkistRuhuZaryadu, 2)) / 2) * HustynaPovitrya / 1000000; }
+        }
+
+        /// <summary>
+        /// Тиск кінця такту впуску
+        /// </summary>
+        public double PressureEndOfInhile
+        {
+            get { return AirPressure - VtratyTyskuPryVpusku; }
+        }
+
+        /// <summary>
+        /// CoefficientResidualRatio
+        /// </summary>
+        public double CoefficientResidualRatio
+        {
+            get { return (PressureEndOfExhile * (AirTemperature + TemperatureHeatingCharge)) / (
+            (PowerOfPressure * PressureEndOfInhile - PressureEndOfExhile) * TemperatureExhaustGasses); }
+        }
+
+        /// <summary>
+        /// TemperetureEndOfInhile
+        /// </summary>
+        public double TemperetureEndOfInhile
+        {
+            get
+            {
+                return ( AirTemperature + TemperatureHeatingCharge + CoefficientResidualRatio * TemperatureExhaustGasses) / (
+                1 + CoefficientResidualRatio);
+            }
+        }
+
+        /// <summary>
+        /// CoefficientFilling
+        /// </summary>
+        public double CoefficientFilling
+        {
+            get
+            {
+                return (1 / PowerOfPressure * (AirTemperature / (AirTemperature + TemperatureHeatingCharge)) * (
+                1 / AirPressure) * (PressureEndOfExhile * PowerOfPressure - PressureEndOfExhile) * ChargeCoefficient);
+            }
+        }
+
+        /// <summary>
+        /// CompressionPolythrope
+        /// </summary>
+        public double CompressionPolythrope
+        {
+            get { return 1.41 - (100 / NominalFrequencyV); }
+        }
+
+        /// <summary>
+        /// EndOfCompressionTempreture
+        /// </summary>
+        public double EndOfCompressionTempreture
+        {
+            get { return TemperetureEndOfInhile * Math.Pow(PowerOfPressure, (CompressionPolythrope - 1)); }
+        }
+
+        /// <summary>
+        /// EndOfCompressionPressure
+        /// </summary>
+        public double EndOfCompressionPressure
+        {
+            get { return (PressureEndOfInhile * Math.Pow(PowerOfPressure, CompressionPolythrope)); }
+        }
+
+        /// <summary>
+        /// AirStecheometricQuantityKG
+        /// </summary>
+        public double AirStecheometricQuantityKG
+        {
+            get { return (1 / 0.23) * ((8 / 3) * C + 8 * H - O); }
+        }
+
+        /// <summary>
+        /// AirStecheometricQuantityKMOLL
+        /// </summary>
+        public double AirStecheometricQuantityKMOLL
+        {
+            get { return (1 / 0.21) * (C / 12 + H / 4 + O / 32); }
+        }
+
+        /// <summary>
+        /// AirMollMass
+        /// </summary>
+        public double AirMollMass
+        {
+            get { return AirStecheometricQuantityKG / AirStecheometricQuantityKMOLL; }
+        }
+
+        /// <summary>
+        /// RealAirQuantity
+        /// </summary>
+        public double RealAirQuantity
+        {
+            get { return AirCoefficient * AirStecheometricQuantityKMOLL; }
+        }
+
+        /// <summary>
+        /// ChargeAmountFromKG
+        /// </summary>
+        public double ChargeAmountFromKG
+        {
+            get { return AirCoefficient * AirStecheometricQuantityKMOLL + (1 / FuellMassKMOLL); }
+        }
+
+        /// <summary>
+        /// FuellBurnProductsMass
+        /// </summary>
+        public double FuellBurnProductsMass
+        {
+            get { return AirCoefficient * AirStecheometricQuantityKMOLL + H / 4 + O / 32; }
+        }
+
+        /// <summary>
+        /// MolecularChangeCoefficient
+        /// </summary>
+        public double MolecularChangeCoefficient
+        {
+            get { return FuellBurnProductsMass / ChargeAmountFromKG; }
+        }
+
+        /// <summary>
+        /// Дійсний  коефіцієнт  молекулярної зміни
+        /// </summary>
+        public double RealMolecularChangeCoefficient
+        {
+            get { return (MolecularChangeCoefficient + CoefficientResidualRatio) / (
+            1 + CoefficientResidualRatio); }
+        }
+
+        /// <summary>
+        /// EndBurnTemperature
+        /// </summary>
+        public double EndBurnTemperature
+        {
+            get
+            {
+                double temp_a = RealMolecularChangeCoefficient * (15.5 + 13.8 / AirCoefficient) / 10000;
+                double temp_b = (28.514 + 0.92 / AirCoefficient) * RealMolecularChangeCoefficient;
+                double temp_c = (-HeatCoefficient * NyzchaTeplotaZhorannya / (
+                AirCoefficient * AirStecheometricQuantityKMOLL * (1 + CoefficientResidualRatio)) - (1.74 / 1000) * (
+                Math.Pow(EndOfCompressionTempreture, 2)) - (
+                20.16 + 8.314 * PressureCoefficient) * EndOfCompressionTempreture);
+                double discriminantRoot = Math.Pow((Math.Pow(temp_b, 2) - 4 * temp_a * temp_c), 0.5);
+                double root1 = (-temp_b + discriminantRoot) / (2 * temp_a);
+                double root2 = (-temp_b - discriminantRoot) / (2 * temp_a);
+                if (root1 >= 0) { return root1; }
+                else { return root2; }
+            }
+        }
+
+        /// <summary>
+        /// PressureEndOfBurn
+        /// </summary>
+        public double PressureEndOfBurn
+        {
+            get { return EndOfCompressionPressure * PressureCoefficient; }
+        }
+
+        /// <summary>
+        /// Ступінь попереднього розширення
+        /// </summary>
+        public double StupinPoperednyogoRozshyrennya
+        {
+            get { return (RealMolecularChangeCoefficient * EndBurnTemperature) / (
+                PressureCoefficient * EndOfCompressionTempreture); }
+        }
+
+        /// <summary>
+        /// Ступінню остаточного розширення
+        /// </summary>
+        public double StupinOstatochnogoRozshyrennya
+        {
+            get { return PowerOfPressure / StupinPoperednyogoRozshyrennya; }
+        }
+
+        /// <summary>
+        /// Тиск кінця розширення
+        /// </summary>
+        public double PressyreKinetsRozshyrennya
+        {
+            get { return PressureEndOfBurn / (Math.Pow(StupinOstatochnogoRozshyrennya, PolytropeExpansion)); }
+        }
+
+        /// <summary>
+        /// Температура кінця розширення
+        /// </summary>
+        public double TemperatureEndExpansion
+        {
+            get { return EndBurnTemperature / Math.Pow(StupinOstatochnogoRozshyrennya, (PolytropeExpansion - 1)); }
+        }
+
+        /// <summary>
+        /// Розрфхункова температура залишкових газів
+        /// </summary>
+        public double TemperatureExhaustGassesRozrah
+        {
+            get { return TemperatureEndExpansion / Math.Pow((PressyreKinetsRozshyrennya / AirPressure), (1 / 3)); }
+        }
+
+        /// <summary>
+        /// Правильність прийнятої температури залишкових газів
+        /// </summary>
+        public double Pohybka
+        {
+            get { return 100 * (TemperatureExhaustGassesRozrah - TemperatureExhaustGasses) / TemperatureExhaustGassesRozrah; }
+        }
+
+        /// <summary>
+        /// Розрахунковий середній індикаторний тиск
+        /// </summary>
+        public double RozrahuncovySeredniyIndykatornyTysk
+        {
+            get
+            {
+                return (EndOfCompressionPressure / (PowerOfPressure - 1)) * (
+                    PressureCoefficient * (StupinPoperednyogoRozshyrennya - 1) + (
+                    PressureCoefficient * StupinPoperednyogoRozshyrennya / (PolytropeExpansion - 1)) * (
+                    1 - (1 / (Math.Pow(StupinOstatochnogoRozshyrennya, (PolytropeExpansion - 1))))) - (
+                    1 / (CompressionPolythrope - 1)) * (1 - (1 / (Math.Pow(PowerOfPressure, (CompressionPolythrope - 1))))));
+            }
+        }
+
+        /// <summary>
+        /// Дійсний середній індикаторний тиск
+        /// </summary>
+        public double DiysnySeredniyIndykatornyTysk
+        {
+            get { return RozrahuncovySeredniyIndykatornyTysk * CoefPovnotyIndycatornoyiDiagramy; }
+        }
+
+        /// <summary>
+        /// Індикаторний ККД
+        /// </summary>
+        public double IndykatornyKKD
+        {
+            get { return DiysnySeredniyIndykatornyTysk * AirCoefficient * AirStecheometricQuantityKG * 1000 / (
+                    NyzchaTeplotaZhorannya * HustynaPovitrya * CoefficientFilling); }
+        }
+
+        /// <summary>
+        /// Питома індикаторна витрата палива
+        /// </summary>
+        public double PytomaIndykatornaVytrataPalyva
+        {
+            get { return 3600 * 1000 / (NyzchaTeplotaZhorannya * IndykatornyKKD); }
+        }
+
+        /// <summary>
+        /// Середня швидкість поршня
+        /// </summary>
+        public double SerednyaShvydkistPorshnya
+        {
+            get { return Hid * NominalFrequencyV / 30000; }
+        }
+
+        /// <summary>
+        /// Механічні втрати двигуна
+        /// </summary>
+        public double MehanichniVtratyDvyguna
+        {
+            get { return 0.105 + 0.012 * SerednyaShvydkistPorshnya; }
+        }
+
+        /// <summary>
+        /// Середній ефективний тиск
+        /// </summary>
+        public double SeredniyEfektyvnyTysk
+        {
+            get { return DiysnySeredniyIndykatornyTysk - MehanichniVtratyDvyguna; }
+        }
+
+        /// <summary>
+        /// Механічний ККД
+        /// </summary>
+        public double MehanichnyKKD
+        {
+            get { return SeredniyEfektyvnyTysk / DiysnySeredniyIndykatornyTysk; }
+        }
+
+        /// <summary>
+        /// Ефективний ККД
+        /// </summary>
+        public double EfectyvnyKKD
+        {
+            get { return IndykatornyKKD * MehanichnyKKD; }
+        }
+
+        /// <summary>
+        /// Ефективна питома витрата палива
+        /// </summary>
+        public double EfectyvnaPytomaVytrataPalyva
+        {
+            get { return 3600 * 1000 / (NyzchaTeplotaZhorannya * EfectyvnyKKD); }
+        }
+
+        /// <summary>
+        /// Необхідний літраж двигуна
+        /// </summary>
+        public double NeobhidnyLitrazhDvyguna
+        {
+            get { return 30 * TaktnystDvyguna * NominalPower / (SeredniyEfektyvnyTysk * NominalFrequencyV); }
+        }
+
+        /// <summary>
+        /// Необхідний об'єм циліндра
+        /// </summary>
+        public double NeobhidnyObemCylindra
+        {
+            get { return NeobhidnyLitrazhDvyguna / ChysloCylindriv; }
+        }
+
+        /// <summary>
+        /// Розрахунковий діаметр циліндра
+        /// </summary>
+        public double DiameterRozrah
+        {
+            get { return 100 * (Math.Pow((ChysloCylindriv * NeobhidnyObemCylindra / (Math.PI * (Hid / Diameter))), (1 / 3))); }
+        }
+
+        /// <summary>
+        /// Похибка діаметрів
+        /// </summary>
+        public double PohybkaD
+        {
+            get { return 100 * (DiameterRozrah - Diameter) / Diameter; }
+        }
+
+        /// <summary>
+        /// Дійсний робочий об'єм циліндра
+        /// </summary>
+        public double DiysnyRobochyObyemCylindra
+        {
+            get { return (Math.PI * (Math.Pow(diameter, 2)) / 4) * Hid / 1000000; }
+        }
+
+        /// <summary>
+        /// Розрахункова потужність двигуна
+        /// </summary>
+        public double NominalPoweRozrah
+        {
+            get { return DiysnyRobochyObyemCylindra * SeredniyEfektyvnyTysk * NominalFrequencyV * ChysloCylindriv / (30 * TaktnystDvyguna); }
+        }
+
+        /// <summary>
+        /// Похибка потужностей
+        /// </summary>
+        public double PohybkaPotuzhnostey
+        {
+            get { return 100 * (NominalPoweRozrah - NominalPower) / NominalPower; }
+        }
+
+        /// <summary>
+        /// Площа поршня
+        /// </summary>
+        public double PloshchaPorshnya
+        {
+            get { return Math.PI * (Math.Pow(Diameter, 2)) / 400; }
+        }
+
+        /// <summary>
+        /// Дійсний літраж двигуна
+        /// </summary>
+        public double DiysnyLitrazhDvyguna
+        {
+            get { return DiysnyRobochyObyemCylindra * ChysloCylindriv; }
+        }
+
+        /// <summary>
+        /// Розрахунковий крутний момент
+        /// </summary>
+        public double RozrahunkovyKrytnyMoment
+        {
+            get { return 9550 * NominalPoweRozrah / NominalFrequencyV; }
+        }
+
+        /// <summary>
+        /// Годинна витрата палива
+        /// </summary>
+        public double GodynnaVytrataPalyva
+        {
+            get { return NominalPoweRozrah * EfectyvnaPytomaVytrataPalyva / 1000; }
+        }
+
+        /// <summary>
+        /// Літрова потужність
+        /// </summary>
+        public double LitrovaNominalPower
+        {
+            get { return NominalPoweRozrah / (DiysnyRobochyObyemCylindra * ChysloCylindriv); }
+        }
+
+        /// <summary>
+        /// Питома поршнева потужність
+        /// </summary>
+        public double PytomaPorshnevaPower
+        {
+            get { return NominalPoweRozrah * 100 / (PloshchaPorshnya * ChysloCylindriv); }
+        }
+
+        #endregion
     }
 }
