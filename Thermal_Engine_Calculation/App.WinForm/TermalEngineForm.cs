@@ -54,6 +54,8 @@ namespace Thermal_Engine_Calculation.App.WinForm
                 {
                     listButtonForVariables[i] = new ButtonForVariables()
                     {
+                        _nameOfButton = ListNameOfVariableUkr[i],
+                        _valueOfButton = ListValueOfVariableString[i],
                         Text = $"{ListNameOfVariableUkr[i]}: {ListValueOfVariableString[i]}",
                         Dock = DockStyle.Top,
                         Width = panelForButton.Width,
@@ -63,6 +65,8 @@ namespace Thermal_Engine_Calculation.App.WinForm
                 {
                     listButtonForVariables[i] = new ButtonForVariables()
                     {
+                        _nameOfButton = ListNameOfVariableUkr[i],
+                        _valueOfButton = ListValueOfVariableDouble[i - 2],
                         Text = $"{ListNameOfVariableUkr[i]}: {ListValueOfVariableDouble[i-2]}",
                         Dock = DockStyle.Top,
                         Width = panelForButton.Width,
@@ -84,7 +88,8 @@ namespace Thermal_Engine_Calculation.App.WinForm
 
         private void ButtonForVariables_Click(object sender, System.EventArgs e)
         {
-            MessageBox.Show($"{((ButtonForVariables)sender).Text} was clicked");
+            textBoxEnterValue.PlaceholderText = ((ButtonForVariables)sender)._valueOfButton.ToString();
+            labelNameValue.Text = ((ButtonForVariables)sender)._nameOfButton;
         }
 
     }

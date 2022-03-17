@@ -83,7 +83,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             // 
             this.textBoxEnterValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxEnterValue.Location = new System.Drawing.Point(38, 52);
+            this.textBoxEnterValue.Location = new System.Drawing.Point(35, 52);
             this.textBoxEnterValue.Name = "textBoxEnterValue";
             this.textBoxEnterValue.PlaceholderText = "Значення змінної";
             this.textBoxEnterValue.Size = new System.Drawing.Size(283, 27);
@@ -93,7 +93,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             // 
             this.labelNameValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelNameValue.AutoSize = true;
-            this.labelNameValue.Location = new System.Drawing.Point(243, 9);
+            this.labelNameValue.Location = new System.Drawing.Point(35, 9);
             this.labelNameValue.Name = "labelNameValue";
             this.labelNameValue.Size = new System.Drawing.Size(97, 20);
             this.labelNameValue.TabIndex = 0;
