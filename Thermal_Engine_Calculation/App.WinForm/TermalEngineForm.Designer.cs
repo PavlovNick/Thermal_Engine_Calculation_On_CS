@@ -53,7 +53,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panelForButton.Location = new System.Drawing.Point(0, 0);
             this.panelForButton.Name = "panelForButton";
-            this.panelForButton.Size = new System.Drawing.Size(300, 456);
+            this.panelForButton.Size = new System.Drawing.Size(400, 456);
             this.panelForButton.TabIndex = 0;
             // 
             // panelForEnter
@@ -64,15 +64,15 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForEnter.Controls.Add(this.buttonChangeValue);
             this.panelForEnter.Controls.Add(this.textBoxEnterValue);
             this.panelForEnter.Controls.Add(this.labelNameValue);
-            this.panelForEnter.Location = new System.Drawing.Point(300, 0);
+            this.panelForEnter.Location = new System.Drawing.Point(400, 0);
             this.panelForEnter.Name = "panelForEnter";
-            this.panelForEnter.Size = new System.Drawing.Size(482, 100);
+            this.panelForEnter.Size = new System.Drawing.Size(632, 100);
             this.panelForEnter.TabIndex = 1;
             // 
             // buttonChangeValue
             // 
             this.buttonChangeValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonChangeValue.Location = new System.Drawing.Point(349, 50);
+            this.buttonChangeValue.Location = new System.Drawing.Point(401, 50);
             this.buttonChangeValue.Name = "buttonChangeValue";
             this.buttonChangeValue.Size = new System.Drawing.Size(94, 29);
             this.buttonChangeValue.TabIndex = 2;
@@ -86,14 +86,14 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.textBoxEnterValue.Location = new System.Drawing.Point(38, 52);
             this.textBoxEnterValue.Name = "textBoxEnterValue";
             this.textBoxEnterValue.PlaceholderText = "Значення змінної";
-            this.textBoxEnterValue.Size = new System.Drawing.Size(267, 27);
+            this.textBoxEnterValue.Size = new System.Drawing.Size(283, 27);
             this.textBoxEnterValue.TabIndex = 1;
             // 
             // labelNameValue
             // 
             this.labelNameValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelNameValue.AutoSize = true;
-            this.labelNameValue.Location = new System.Drawing.Point(208, 9);
+            this.labelNameValue.Location = new System.Drawing.Point(243, 9);
             this.labelNameValue.Name = "labelNameValue";
             this.labelNameValue.Size = new System.Drawing.Size(97, 20);
             this.labelNameValue.TabIndex = 0;
@@ -106,16 +106,16 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForResetAndCalculate.BackColor = System.Drawing.SystemColors.Highlight;
             this.panelForResetAndCalculate.Controls.Add(this.buttonCalculate);
             this.panelForResetAndCalculate.Controls.Add(this.buttonReset);
-            this.panelForResetAndCalculate.Location = new System.Drawing.Point(300, 100);
+            this.panelForResetAndCalculate.Location = new System.Drawing.Point(400, 100);
             this.panelForResetAndCalculate.Name = "panelForResetAndCalculate";
-            this.panelForResetAndCalculate.Size = new System.Drawing.Size(482, 100);
+            this.panelForResetAndCalculate.Size = new System.Drawing.Size(632, 100);
             this.panelForResetAndCalculate.TabIndex = 2;
             // 
             // buttonCalculate
             // 
             this.buttonCalculate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonCalculate.AutoEllipsis = true;
-            this.buttonCalculate.Location = new System.Drawing.Point(265, 41);
+            this.buttonCalculate.Location = new System.Drawing.Point(317, 41);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(178, 29);
             this.buttonCalculate.TabIndex = 1;
@@ -126,7 +126,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             // 
             this.buttonReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonReset.AutoEllipsis = true;
-            this.buttonReset.Location = new System.Drawing.Point(38, 41);
+            this.buttonReset.Location = new System.Drawing.Point(80, 41);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(203, 29);
             this.buttonReset.TabIndex = 0;
@@ -140,9 +140,9 @@ namespace Thermal_Engine_Calculation.App.WinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelForListing.BackColor = System.Drawing.SystemColors.Info;
             this.panelForListing.Controls.Add(this.richTextBoxOutput);
-            this.panelForListing.Location = new System.Drawing.Point(300, 200);
+            this.panelForListing.Location = new System.Drawing.Point(400, 200);
             this.panelForListing.Name = "panelForListing";
-            this.panelForListing.Size = new System.Drawing.Size(482, 256);
+            this.panelForListing.Size = new System.Drawing.Size(632, 256);
             this.panelForListing.TabIndex = 3;
             // 
             // richTextBoxOutput
@@ -152,7 +152,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxOutput.Location = new System.Drawing.Point(6, 6);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
-            this.richTextBoxOutput.Size = new System.Drawing.Size(464, 235);
+            this.richTextBoxOutput.Size = new System.Drawing.Size(514, 235);
             this.richTextBoxOutput.TabIndex = 0;
             this.richTextBoxOutput.Text = "";
             // 
@@ -160,7 +160,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 453);
+            this.ClientSize = new System.Drawing.Size(932, 453);
             this.Controls.Add(this.panelForListing);
             this.Controls.Add(this.panelForResetAndCalculate);
             this.Controls.Add(this.panelForEnter);

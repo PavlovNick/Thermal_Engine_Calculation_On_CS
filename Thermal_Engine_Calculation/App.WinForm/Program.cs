@@ -17,7 +17,11 @@ namespace Thermal_Engine_Calculation
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new App.WinForm.TermalEngineForm());
+
+            App.WinForm.TermalEngineForm TermalEngineFormobject = new App.WinForm.TermalEngineForm();
+            TermalEngineFormobject.Connect_Event_Handler_ButtonForVariables();
+
+            Application.Run(TermalEngineFormobject);
         }
     }
 }

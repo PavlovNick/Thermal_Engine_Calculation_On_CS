@@ -9,8 +9,8 @@ namespace Thermal_Engine_Calculation.BLL
 
         #region Fields
 
-        private string model = "D-240"; //номінальна потужність Nе = 58,8 кВт
-        private string type = "Diesel"; //номінальна частота обертання колінчастого вала n = 2200 об/хв
+        private string model = "D-240"; 
+        private string type = "Diesel"; 
         private double nominalPower = 58.8; //номінальна потужність Nе = 58,8 кВт
         private double nominalFrequencyV = 2200; //номінальна частота обертання колінчастого вала n = 2200 об/хв
         private double powerOfPressure = 16; //ступінь стиску = 16
