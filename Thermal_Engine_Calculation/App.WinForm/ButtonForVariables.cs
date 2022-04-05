@@ -7,6 +7,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
 {
     class ButtonForVariables:Button
     {
+        public int _beacon;
         public string _nameOfButton;
         public object _valueOfButton;
         public ButtonForVariables():base()

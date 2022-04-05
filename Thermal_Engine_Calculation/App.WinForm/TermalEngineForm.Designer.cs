@@ -155,6 +155,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.richTextBoxOutput.Size = new System.Drawing.Size(514, 235);
             this.richTextBoxOutput.TabIndex = 0;
             this.richTextBoxOutput.Text = "";
+            this.richTextBoxOutput.ReadOnly = true;
             // 
             // TermalEngineForm
             // 

@@ -7,6 +7,11 @@ namespace Thermal_Engine_Calculation.BLL
     public class ThermalEngine
     {
 
+        public List<double> _ListValueOfVariableDouble = new List<double> {
+        0, 0, 58.8, 2200, 16, 1.36, 125, 110, 1.8, 1.4, 1.02, 0.9, 20, 840, 1.26, 0.111, 288, 0.1,
+        0.857, 0.133, 0.01, 190, 42500, 3.6, 100, 8314, 29, 0.95, 4, 4,  
+        };
+
         #region Fields
 
         private string model = "D-240"; 
@@ -61,7 +66,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double NominalPower
         {
-            get { return nominalPower; }
+            get { return _ListValueOfVariableDouble[2]; }
             set { nominalPower = value; }
         }
 
@@ -70,7 +75,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double NominalFrequencyV
         {
-            get { return nominalFrequencyV; }
+            get { return _ListValueOfVariableDouble[3]; }
             set { nominalFrequencyV = value; }
         }
 
@@ -79,7 +84,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double PowerOfPressure
         {
-            get { return powerOfPressure; }
+            get { return _ListValueOfVariableDouble[4]; }
             set { powerOfPressure = value; }
         }
 
@@ -88,7 +93,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double HidDoDiameter 
         {
-            get { return hidDoDiameter; }
+            get { return _ListValueOfVariableDouble[5]; }
             set { hidDoDiameter = value; }
         }
 
@@ -97,7 +102,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double Hid 
         {
-            get { return hid; }
+            get { return _ListValueOfVariableDouble[6]; }
             set { hid = value; }
         }
 
@@ -106,7 +111,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double Diameter 
         {
-            get { return diameter; }
+            get { return _ListValueOfVariableDouble[7]; }
             set { diameter = value; }
         }
 
@@ -115,7 +120,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double PressureCoefficient
         {
-            get { return pressureCoefficient; }
+            get { return _ListValueOfVariableDouble[8]; }
             set { pressureCoefficient = value; }
         }
 
@@ -124,7 +129,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double AirCoefficient
         {
-            get { return airCoefficient; }
+            get { return _ListValueOfVariableDouble[9]; }
             set { airCoefficient = value; }
         }
 
@@ -133,7 +138,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double ChargeCoefficient
         {
-            get { return chargeCoefficient; }
+            get { return _ListValueOfVariableDouble[10]; }
             set { chargeCoefficient = value; }
         }
 
@@ -142,7 +147,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double HeatCoefficient 
         {
-            get { return heatCoefficient; }
+            get { return _ListValueOfVariableDouble[11]; }
             set { heatCoefficient = value; }
         }
 
@@ -151,7 +156,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double TemperatureHeatingCharge
         {
-            get { return temperatureHeatingCharge; }
+            get { return _ListValueOfVariableDouble[12]; }
             set { temperatureHeatingCharge = value; }
         }
 
@@ -160,7 +165,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double TemperatureExhaustGasses 
         {
-            get { return temperatureExhaustGasses; }
+            get { return _ListValueOfVariableDouble[13]; }
             set { temperatureExhaustGasses = value; }
         }
 
@@ -169,7 +174,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double PolytropeExpansion
         {
-            get { return polytropeExpansion; }
+            get { return _ListValueOfVariableDouble[14]; }
             set { polytropeExpansion = value; }
         }
 
@@ -178,7 +183,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double PressureEndOfExhile 
         {
-            get { return pressureEndOfExhile; }
+            get { return _ListValueOfVariableDouble[15]; }
             set { pressureEndOfExhile = value; }
         }
 
@@ -187,7 +192,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double AirTemperature 
         {
-            get { return airTemperature; }
+            get { return _ListValueOfVariableDouble[16]; }
             set { airTemperature = value; }
         }
 
@@ -196,7 +201,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double AirPressure 
         {
-            get { return airPressure; }
+            get { return _ListValueOfVariableDouble[17]; }
             set { airPressure = value; }
         }
 
@@ -205,7 +210,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double C 
         {
-            get { return c; }
+            get { return _ListValueOfVariableDouble[18]; }
             set { c = value; }
         }
 
@@ -214,7 +219,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double H 
         {
-            get { return h; }
+            get { return _ListValueOfVariableDouble[19]; }
             set { h = value; }
         }
 
@@ -223,7 +228,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double O 
         {
-            get { return o; }
+            get { return _ListValueOfVariableDouble[20]; }
             set { o = value; }
         }
 
@@ -232,7 +237,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double FuellMassKMOLL 
         {
-            get { return fuellMassKMOLL; }
+            get { return _ListValueOfVariableDouble[21]; }
             set { fuellMassKMOLL = value; }
         }
 
@@ -241,7 +246,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double NyzchaTeplotaZhorannya 
         {
-            get { return nyzchaTeplotaZhorannya; }
+            get { return _ListValueOfVariableDouble[22]; }
             set { nyzchaTeplotaZhorannya = value; }
         }
 
@@ -250,7 +255,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double CoefVtratyTysku
         {
-            get { return coefVtratyTysku; }
+            get { return _ListValueOfVariableDouble[23]; }
             set { coefVtratyTysku = value; }
         }
 
@@ -259,7 +264,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double ShvydkistRuhuZaryadu 
         {
-            get { return shvydkistRuhuZaryadu; }
+            get { return _ListValueOfVariableDouble[24]; }
             set { shvydkistRuhuZaryadu = value; }
         }
 
@@ -268,7 +273,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double UniversalnaHazovaStala 
         {
-            get { return universalnaHazovaStala; }
+            get { return _ListValueOfVariableDouble[25]; }
             set { universalnaHazovaStala = value; }
         }
 
@@ -277,7 +282,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double MoleculyarnaMasaPovitrya 
         {
-            get { return moleculyarnaMasaPovitrya; }
+            get { return _ListValueOfVariableDouble[26]; }
             set { moleculyarnaMasaPovitrya = value; }
         }
 
@@ -286,7 +291,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double CoefPovnotyIndycatornoyiDiagramy 
         {
-            get { return coefPovnotyIndycatornoyiDiagramy; }
+            get { return _ListValueOfVariableDouble[27]; }
             set { coefPovnotyIndycatornoyiDiagramy = value; }
         }
 
@@ -295,7 +300,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public int TaktnystDvyguna 
         {
-            get { return taktnystDvyguna; }
+            get { return (int)_ListValueOfVariableDouble[28]; }
             set { taktnystDvyguna = value; }
         }
 
@@ -304,7 +309,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public int ChysloCylindriv 
         {
-            get { return chysloCylindriv; }
+            get { return (int)_ListValueOfVariableDouble[29]; }
             set { chysloCylindriv = value; }
         }
 
@@ -345,7 +350,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// CoefficientResidualRatio
+        /// Коефіціент залишкових газів
         /// </summary>
         public double CoefficientResidualRatio
         {
@@ -354,7 +359,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// TemperetureEndOfInhile
+        /// Температура кінця впуску
         /// </summary>
         public double TemperetureEndOfInhile
         {
@@ -366,7 +371,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// CoefficientFilling
+        /// Коефіціент наповнення циліндра
         /// </summary>
         public double CoefficientFilling
         {
@@ -378,7 +383,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// CompressionPolythrope
+        /// Політропа стиску
         /// </summary>
         public double CompressionPolythrope
         {
@@ -386,7 +391,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// EndOfCompressionTempreture
+        /// Температура кінця такту стиску
         /// </summary>
         public double EndOfCompressionTempreture
         {
@@ -394,7 +399,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// EndOfCompressionPressure
+        /// Тиск кінця такту стиску
         /// </summary>
         public double EndOfCompressionPressure
         {
@@ -402,7 +407,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// AirStecheometricQuantityKG
+        /// Теретична кількість повітря необхідна для згорання кілограма палива (кг)
         /// </summary>
         public double AirStecheometricQuantityKG
         {
@@ -410,7 +415,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// AirStecheometricQuantityKMOLL
+        /// Теретична кількість повітря необхідна для згорання кілограма палива (кМоль)
         /// </summary>
         public double AirStecheometricQuantityKMOLL
         {
@@ -418,7 +423,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// AirMollMass
+        /// Молярна маса повітря
         /// </summary>
         public double AirMollMass
         {
@@ -426,7 +431,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// RealAirQuantity
+        /// Дійсний коефіціент надлишку повітря
         /// </summary>
         public double RealAirQuantity
         {
@@ -434,7 +439,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// ChargeAmountFromKG
+        /// Кількість свіжого заряду
         /// </summary>
         public double ChargeAmountFromKG
         {
@@ -442,7 +447,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// FuellBurnProductsMass
+        /// Кількість продуктів згорання
         /// </summary>
         public double FuellBurnProductsMass
         {
@@ -450,7 +455,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// MolecularChangeCoefficient
+        /// Теоретичний коефіціент молекулярної зміни
         /// </summary>
         public double MolecularChangeCoefficient
         {
@@ -467,7 +472,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// EndBurnTemperature
+        /// Температура кінця згорання
         /// </summary>
         public double EndBurnTemperature
         {
@@ -488,7 +493,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// PressureEndOfBurn
+        /// Тиск кінця згорання
         /// </summary>
         public double PressureEndOfBurn
         {
@@ -529,7 +534,7 @@ namespace Thermal_Engine_Calculation.BLL
         }
 
         /// <summary>
-        /// Розрфхункова температура залишкових газів
+        /// Розрахункова температура залишкових газів
         /// </summary>
         public double TemperatureExhaustGassesRozrah
         {

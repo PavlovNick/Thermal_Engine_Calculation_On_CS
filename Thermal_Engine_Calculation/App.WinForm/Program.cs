@@ -19,7 +19,7 @@ namespace Thermal_Engine_Calculation
             Application.SetCompatibleTextRenderingDefault(false);
 
             App.WinForm.TermalEngineForm TermalEngineFormobject = new App.WinForm.TermalEngineForm();
-            TermalEngineFormobject.Connect_Event_Handler_ButtonForVariables();
+            TermalEngineFormobject.Connect_Event_Handler();
 
             Application.Run(TermalEngineFormobject);
         }
