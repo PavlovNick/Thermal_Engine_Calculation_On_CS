@@ -9,7 +9,7 @@ namespace Thermal_Engine_Calculation.BLL
 
         public List<double> _ListValueOfVariableDouble = new List<double> {
         0, 0, 58.8, 2200, 16, 1.36, 125, 110, 1.8, 1.4, 1.02, 0.9, 20, 840, 1.26, 0.111, 288, 0.1,
-        0.857, 0.133, 0.01, 190, 42500, 3.6, 100, 8314, 29, 0.95, 4, 4,  
+        0.857, 0.133, 0.01, 190, 42500, 3.6, 100, 8314, 29, 0.95, 4.0, 4.0,  
         };
 
         #region Fields
@@ -42,8 +42,8 @@ namespace Thermal_Engine_Calculation.BLL
         private double universalnaHazovaStala = 8314; //Універсальна газова стала дж/(кМ*К)
         private double moleculyarnaMasaPovitrya = 29; //Молекулярна маса повітря кг/кМ
         private double coefPovnotyIndycatornoyiDiagramy = 0.95; //Коефіцієнт повноти індикаторної діаграми
-        private int taktnystDvyguna = 4; //Тактність двигуна
-        private int chysloCylindriv = 4; //Число циліндрів
+        private double taktnystDvyguna = 4; //Тактність двигуна
+        private double chysloCylindriv = 4; //Число циліндрів
 
         #endregion
 
@@ -298,7 +298,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// <summary>
         /// Тактність двигуна
         /// </summary>
-        public int TaktnystDvyguna 
+        public double TaktnystDvyguna 
         {
             get { return (int)_ListValueOfVariableDouble[28]; }
             set { taktnystDvyguna = value; }
@@ -307,7 +307,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// <summary>
         /// Число циліндрів
         /// </summary>
-        public int ChysloCylindriv 
+        public double ChysloCylindriv 
         {
             get { return (int)_ListValueOfVariableDouble[29]; }
             set { chysloCylindriv = value; }
@@ -330,7 +330,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double HustynaPovitrya
         {
-            get { return (AirPressure * 1000000) / (HazovaStalaPovitrya * AirTemperature); }
+            get { return (AirPressure * 1000000.0) / (HazovaStalaPovitrya * AirTemperature); }
         }
 
         /// <summary>
@@ -338,7 +338,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double VtratyTyskuPryVpusku
         {
-            get { return (CoefVtratyTysku * (Math.Pow( ShvydkistRuhuZaryadu, 2)) / 2) * HustynaPovitrya / 1000000; }
+            get { return (CoefVtratyTysku * (Math.Pow( ShvydkistRuhuZaryadu, 2.0)) / 2.0) * HustynaPovitrya / 1000000.0; }
         }
 
         /// <summary>
@@ -411,7 +411,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double AirStecheometricQuantityKG
         {
-            get { return (1 / 0.23) * ((8 / 3) * C + 8 * H - O); }
+            get { return (1 / 0.23) * ((8.0 / 3.0) * C + 8 * H - O); }
         }
 
         /// <summary>
@@ -419,7 +419,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double AirStecheometricQuantityKMOLL
         {
-            get { return (1 / 0.21) * (C / 12 + H / 4 + O / 32); }
+            get { return (1 / 0.21) * (C / 12.0 + H / 4.0 + O / 32.0); }
         }
 
         /// <summary>
@@ -451,7 +451,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double FuellBurnProductsMass
         {
-            get { return AirCoefficient * AirStecheometricQuantityKMOLL + H / 4 + O / 32; }
+            get { return AirCoefficient * AirStecheometricQuantityKMOLL + H / 4.0 + O / 32.0; }
         }
 
         /// <summary>
@@ -478,15 +478,15 @@ namespace Thermal_Engine_Calculation.BLL
         {
             get
             {
-                double temp_a = RealMolecularChangeCoefficient * (15.5 + 13.8 / AirCoefficient) / 10000;
+                double temp_a = RealMolecularChangeCoefficient * (15.5 + 13.8 / AirCoefficient) / 10000.0;
                 double temp_b = (28.514 + 0.92 / AirCoefficient) * RealMolecularChangeCoefficient;
                 double temp_c = (-HeatCoefficient * NyzchaTeplotaZhorannya / (
-                AirCoefficient * AirStecheometricQuantityKMOLL * (1 + CoefficientResidualRatio)) - (1.74 / 1000) * (
-                Math.Pow(EndOfCompressionTempreture, 2)) - (
+                AirCoefficient * AirStecheometricQuantityKMOLL * (1 + CoefficientResidualRatio)) - (1.74 / 1000.0) * (
+                Math.Pow(EndOfCompressionTempreture, 2.0)) - (
                 20.16 + 8.314 * PressureCoefficient) * EndOfCompressionTempreture);
-                double discriminantRoot = Math.Pow((Math.Pow(temp_b, 2) - 4 * temp_a * temp_c), 0.5);
-                double root1 = (-temp_b + discriminantRoot) / (2 * temp_a);
-                double root2 = (-temp_b - discriminantRoot) / (2 * temp_a);
+                double discriminantRoot = Math.Pow((Math.Pow(temp_b, 2.0) - 4.0 * temp_a * temp_c), 0.5);
+                double root1 = (-temp_b + discriminantRoot) / (2.0 * temp_a);
+                double root2 = (-temp_b - discriminantRoot) / (2.0 * temp_a);
                 if (root1 >= 0) { return root1; }
                 else { return root2; }
             }
@@ -538,7 +538,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double TemperatureExhaustGassesRozrah
         {
-            get { return TemperatureEndExpansion / Math.Pow((PressyreKinetsRozshyrennya / AirPressure), (1 / 3)); }
+            get { return TemperatureEndExpansion / Math.Pow((PressyreKinetsRozshyrennya / AirPressure), (1 / 3.0)); }
         }
 
         /// <summary>
@@ -546,7 +546,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double Pohybka
         {
-            get { return 100 * (TemperatureExhaustGassesRozrah - TemperatureExhaustGasses) / TemperatureExhaustGassesRozrah; }
+            get { return 100.0 * (TemperatureExhaustGassesRozrah - TemperatureExhaustGasses) / TemperatureExhaustGassesRozrah; }
         }
 
         /// <summary>
@@ -556,11 +556,11 @@ namespace Thermal_Engine_Calculation.BLL
         {
             get
             {
-                return (EndOfCompressionPressure / (PowerOfPressure - 1)) * (
-                    PressureCoefficient * (StupinPoperednyogoRozshyrennya - 1) + (
-                    PressureCoefficient * StupinPoperednyogoRozshyrennya / (PolytropeExpansion - 1)) * (
-                    1 - (1 / (Math.Pow(StupinOstatochnogoRozshyrennya, (PolytropeExpansion - 1))))) - (
-                    1 / (CompressionPolythrope - 1)) * (1 - (1 / (Math.Pow(PowerOfPressure, (CompressionPolythrope - 1))))));
+                return (EndOfCompressionPressure / (PowerOfPressure - 1.0)) * (
+                    PressureCoefficient * (StupinPoperednyogoRozshyrennya - 1.0) + (
+                    PressureCoefficient * StupinPoperednyogoRozshyrennya / (PolytropeExpansion - 1.0)) * (
+                    1.0 - (1.0 / (Math.Pow(StupinOstatochnogoRozshyrennya, (PolytropeExpansion - 1.0))))) - (
+                    1.0 / (CompressionPolythrope - 1.0)) * (1.0 - (1.0 / (Math.Pow(PowerOfPressure, (CompressionPolythrope - 1.0))))));
             }
         }
 
@@ -586,7 +586,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double PytomaIndykatornaVytrataPalyva
         {
-            get { return 3600 * 1000 / (NyzchaTeplotaZhorannya * IndykatornyKKD); }
+            get { return 3600.0 * 1000.0 / (NyzchaTeplotaZhorannya * IndykatornyKKD); }
         }
 
         /// <summary>
@@ -594,7 +594,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double SerednyaShvydkistPorshnya
         {
-            get { return Hid * NominalFrequencyV / 30000; }
+            get { return Hid * NominalFrequencyV / 30000.0; }
         }
 
         /// <summary>
@@ -634,7 +634,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double EfectyvnaPytomaVytrataPalyva
         {
-            get { return 3600 * 1000 / (NyzchaTeplotaZhorannya * EfectyvnyKKD); }
+            get { return 3600.0 * 1000.0 / (NyzchaTeplotaZhorannya * EfectyvnyKKD); }
         }
 
         /// <summary>
@@ -642,7 +642,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double NeobhidnyLitrazhDvyguna
         {
-            get { return 30 * TaktnystDvyguna * NominalPower / (SeredniyEfektyvnyTysk * NominalFrequencyV); }
+            get { return 30.0 * TaktnystDvyguna * NominalPower / (SeredniyEfektyvnyTysk * NominalFrequencyV); }
         }
 
         /// <summary>
@@ -658,7 +658,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double DiameterRozrah
         {
-            get { return 100 * (Math.Pow((ChysloCylindriv * NeobhidnyObemCylindra / (Math.PI * (Hid / Diameter))), (1 / 3))); }
+            get { return 100 * (Math.Pow((ChysloCylindriv * NeobhidnyObemCylindra / (Math.PI * (Hid / Diameter))), (1.0 / 3.0))); }
         }
 
         /// <summary>
@@ -666,7 +666,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double PohybkaD
         {
-            get { return 100 * (DiameterRozrah - Diameter) / Diameter; }
+            get { return 100.0 * (double)(DiameterRozrah - Diameter) / (double)Diameter; }
         }
 
         /// <summary>
@@ -674,7 +674,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double DiysnyRobochyObyemCylindra
         {
-            get { return (Math.PI * (Math.Pow(diameter, 2)) / 4) * Hid / 1000000; }
+            get { return (Math.PI * (Math.Pow(diameter, 2.0)) / 4.0) * Hid / 1000000.0; }
         }
 
         /// <summary>
@@ -690,7 +690,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double PohybkaPotuzhnostey
         {
-            get { return 100 * (NominalPoweRozrah - NominalPower) / NominalPower; }
+            get { return 100 * (NominalPoweRozrah - NominalPower) / (double)NominalPower; }
         }
 
         /// <summary>
@@ -698,7 +698,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double PloshchaPorshnya
         {
-            get { return Math.PI * (Math.Pow(Diameter, 2)) / 400; }
+            get { return Math.PI * (Math.Pow(Diameter, 2.0)) / 400.0; }
         }
 
         /// <summary>
@@ -722,7 +722,7 @@ namespace Thermal_Engine_Calculation.BLL
         /// </summary>
         public double GodynnaVytrataPalyva
         {
-            get { return NominalPoweRozrah * EfectyvnaPytomaVytrataPalyva / 1000; }
+            get { return NominalPoweRozrah * EfectyvnaPytomaVytrataPalyva / 1000.0; }
         }
 
         /// <summary>

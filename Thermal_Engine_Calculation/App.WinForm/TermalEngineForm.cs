@@ -47,7 +47,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
                 "Похибка діаметрів", "Дійсний робочий об'єм циліндра", "Розрахункова потужність двигуна",
                 "Похибка потужностей", "Площа поршня", "Дійсний літраж двигуна", "Розрахунковий крутний момент",
                 "Годинна витрата палива", "Літрова потужність", "Питома поршнева потужність"
-            };
+        };
 
         public TermalEngineForm()
         {
@@ -58,74 +58,6 @@ namespace Thermal_Engine_Calculation.App.WinForm
 
             ListValueOfVariableDouble = MainThermalEngine._ListValueOfVariableDouble;
             ListValueOfVariableDoubleDefolt = DefoltThermalEngine._ListValueOfVariableDouble;
-
-            //ListValueOfVariableDouble = new List<double> { 1, 2,
-            //MainThermalEngine.NominalPower, MainThermalEngine.NominalFrequencyV, MainThermalEngine.PowerOfPressure,
-            //MainThermalEngine.HidDoDiameter, MainThermalEngine.Hid, MainThermalEngine.Diameter, MainThermalEngine.PressureCoefficient,
-            //MainThermalEngine.AirCoefficient, MainThermalEngine.ChargeCoefficient, MainThermalEngine.HeatCoefficient,
-            //MainThermalEngine.TemperatureHeatingCharge, MainThermalEngine.TemperatureExhaustGasses, MainThermalEngine.PolytropeExpansion,
-            //MainThermalEngine.PressureEndOfExhile, MainThermalEngine.AirTemperature, MainThermalEngine.AirPressure,
-            //MainThermalEngine.C, MainThermalEngine.H, MainThermalEngine.O, MainThermalEngine.FuellMassKMOLL, 
-            //MainThermalEngine.NyzchaTeplotaZhorannya, MainThermalEngine.CoefVtratyTysku, MainThermalEngine.ShvydkistRuhuZaryadu,
-            //MainThermalEngine.UniversalnaHazovaStala, MainThermalEngine.MoleculyarnaMasaPovitrya, MainThermalEngine.CoefPovnotyIndycatornoyiDiagramy,
-            //MainThermalEngine.TaktnystDvyguna, MainThermalEngine.ChysloCylindriv,
-            //
-            //MainThermalEngine.HazovaStalaPovitrya,
-            //MainThermalEngine.HustynaPovitrya, MainThermalEngine.VtratyTyskuPryVpusku, MainThermalEngine.PressureEndOfInhile,
-            //MainThermalEngine.CoefficientResidualRatio, MainThermalEngine.TemperetureEndOfInhile, 
-            //MainThermalEngine.CoefficientFilling, MainThermalEngine.CompressionPolythrope, MainThermalEngine.EndOfCompressionTempreture,
-            //MainThermalEngine.EndOfCompressionPressure, MainThermalEngine.AirStecheometricQuantityKG, 
-            //MainThermalEngine.AirStecheometricQuantityKMOLL, MainThermalEngine.AirMollMass, MainThermalEngine.RealAirQuantity,
-            //MainThermalEngine.ChargeAmountFromKG, MainThermalEngine.FuellBurnProductsMass, MainThermalEngine.MolecularChangeCoefficient,
-            //MainThermalEngine.RealMolecularChangeCoefficient, MainThermalEngine.EndBurnTemperature, MainThermalEngine.PressureEndOfBurn,
-            //MainThermalEngine.StupinPoperednyogoRozshyrennya, MainThermalEngine.StupinOstatochnogoRozshyrennya,
-            //MainThermalEngine.PressyreKinetsRozshyrennya, MainThermalEngine.TemperatureEndExpansion, 
-            //MainThermalEngine.TemperatureExhaustGassesRozrah, MainThermalEngine.Pohybka, MainThermalEngine.RozrahuncovySeredniyIndykatornyTysk,
-            //MainThermalEngine.DiysnySeredniyIndykatornyTysk, MainThermalEngine.IndykatornyKKD, MainThermalEngine.PytomaIndykatornaVytrataPalyva,
-            //MainThermalEngine.SerednyaShvydkistPorshnya, MainThermalEngine.MehanichniVtratyDvyguna, MainThermalEngine.SeredniyEfektyvnyTysk,
-            //MainThermalEngine.MehanichnyKKD, MainThermalEngine.EfectyvnyKKD, MainThermalEngine.EfectyvnaPytomaVytrataPalyva,
-            //MainThermalEngine.NeobhidnyLitrazhDvyguna, MainThermalEngine.NeobhidnyObemCylindra, MainThermalEngine.DiameterRozrah,
-            //MainThermalEngine.PohybkaD, MainThermalEngine.DiysnyRobochyObyemCylindra, MainThermalEngine.NominalPoweRozrah,
-            //MainThermalEngine.PohybkaPotuzhnostey, MainThermalEngine.PloshchaPorshnya, MainThermalEngine.DiysnyLitrazhDvyguna,
-            //MainThermalEngine.RozrahunkovyKrytnyMoment, MainThermalEngine.GodynnaVytrataPalyva, MainThermalEngine.LitrovaNominalPower,
-            //MainThermalEngine.PytomaPorshnevaPower
-            //};
-
-            //ListValueOfVariableDoubleDefolt = new List<double> { 1, 2,
-            //DefoltThermalEngine.NominalPower, DefoltThermalEngine.NominalFrequencyV, DefoltThermalEngine.PowerOfPressure,
-            //DefoltThermalEngine.HidDoDiameter, DefoltThermalEngine.Hid, DefoltThermalEngine.Diameter, DefoltThermalEngine.PressureCoefficient,
-            //DefoltThermalEngine.AirCoefficient, DefoltThermalEngine.ChargeCoefficient, DefoltThermalEngine.HeatCoefficient,
-            //DefoltThermalEngine.TemperatureHeatingCharge, DefoltThermalEngine.TemperatureExhaustGasses, DefoltThermalEngine.PolytropeExpansion,
-            //DefoltThermalEngine.PressureEndOfExhile, DefoltThermalEngine.AirTemperature, DefoltThermalEngine.AirPressure,
-            //DefoltThermalEngine.C, DefoltThermalEngine.H, DefoltThermalEngine.O, DefoltThermalEngine.FuellMassKMOLL,
-            //DefoltThermalEngine.NyzchaTeplotaZhorannya, DefoltThermalEngine.CoefVtratyTysku, DefoltThermalEngine.ShvydkistRuhuZaryadu,
-            //DefoltThermalEngine.UniversalnaHazovaStala, DefoltThermalEngine.MoleculyarnaMasaPovitrya, DefoltThermalEngine.CoefPovnotyIndycatornoyiDiagramy,
-            //DefoltThermalEngine.TaktnystDvyguna, DefoltThermalEngine.ChysloCylindriv
-            //};
-
-            List<double> tempListValueOfVariableDouble = new List<double>
-            {
-                MainThermalEngine.HazovaStalaPovitrya,
-                MainThermalEngine.HustynaPovitrya, MainThermalEngine.VtratyTyskuPryVpusku, MainThermalEngine.PressureEndOfInhile,
-                MainThermalEngine.CoefficientResidualRatio, MainThermalEngine.TemperetureEndOfInhile,
-                MainThermalEngine.CoefficientFilling, MainThermalEngine.CompressionPolythrope, MainThermalEngine.EndOfCompressionTempreture,
-                MainThermalEngine.EndOfCompressionPressure, MainThermalEngine.AirStecheometricQuantityKG,
-                MainThermalEngine.AirStecheometricQuantityKMOLL, MainThermalEngine.AirMollMass, MainThermalEngine.RealAirQuantity,
-                MainThermalEngine.ChargeAmountFromKG, MainThermalEngine.FuellBurnProductsMass, MainThermalEngine.MolecularChangeCoefficient,
-                MainThermalEngine.RealMolecularChangeCoefficient, MainThermalEngine.EndBurnTemperature, MainThermalEngine.PressureEndOfBurn,
-                MainThermalEngine.StupinPoperednyogoRozshyrennya, MainThermalEngine.StupinOstatochnogoRozshyrennya,
-                MainThermalEngine.PressyreKinetsRozshyrennya, MainThermalEngine.TemperatureEndExpansion,
-                MainThermalEngine.TemperatureExhaustGassesRozrah, MainThermalEngine.Pohybka, MainThermalEngine.RozrahuncovySeredniyIndykatornyTysk,
-                MainThermalEngine.DiysnySeredniyIndykatornyTysk, MainThermalEngine.IndykatornyKKD, MainThermalEngine.PytomaIndykatornaVytrataPalyva,
-                MainThermalEngine.SerednyaShvydkistPorshnya, MainThermalEngine.MehanichniVtratyDvyguna, MainThermalEngine.SeredniyEfektyvnyTysk,
-                MainThermalEngine.MehanichnyKKD, MainThermalEngine.EfectyvnyKKD, MainThermalEngine.EfectyvnaPytomaVytrataPalyva,
-                MainThermalEngine.NeobhidnyLitrazhDvyguna, MainThermalEngine.NeobhidnyObemCylindra, MainThermalEngine.DiameterRozrah,
-                MainThermalEngine.PohybkaD, MainThermalEngine.DiysnyRobochyObyemCylindra, MainThermalEngine.NominalPoweRozrah,
-                MainThermalEngine.PohybkaPotuzhnostey, MainThermalEngine.PloshchaPorshnya, MainThermalEngine.DiysnyLitrazhDvyguna,
-                MainThermalEngine.RozrahunkovyKrytnyMoment, MainThermalEngine.GodynnaVytrataPalyva, MainThermalEngine.LitrovaNominalPower,
-                MainThermalEngine.PytomaPorshnevaPower
-            };
-
 
             #region Add button
 
@@ -184,8 +116,12 @@ namespace Thermal_Engine_Calculation.App.WinForm
         {
             if (beaconForButton > 1)
             {
-                Double.TryParse(textBoxEnterValue.Text, out double temp);
-                ListValueOfVariableDouble[beaconForButton] = temp;
+                double firsttemp = ListValueOfVariableDouble[beaconForButton];
+                try 
+                {
+                    ListValueOfVariableDouble[beaconForButton] = Double.Parse(textBoxEnterValue.Text);
+                }
+                catch { ListValueOfVariableDouble[beaconForButton] = firsttemp; }
                 listButtonForVariables[beaconForButton].Text = $"{ListNameOfVariableUkr[beaconForButton]}: {ListValueOfVariableDouble[beaconForButton]}";
                 listButtonForVariables[beaconForButton]._valueOfButton = ListValueOfVariableDouble[beaconForButton];
             }
@@ -201,18 +137,27 @@ namespace Thermal_Engine_Calculation.App.WinForm
 
         private void buttonReset_Click(object sender, System.EventArgs e)
         {
+            Reset();
+        }
+
+        private void Reset()
+        {
             for (int i = 0; i < 30; i++)
             {
                 if (i < 2)
                 {
                     ListValueOfVariableString[i] = ListValueOfVariableStringDefolt[i];
+                    listButtonForVariables[i].Text = $"{ListNameOfVariableUkr[i]}: {ListValueOfVariableString[i]}";
+                    listButtonForVariables[i]._valueOfButton = ListValueOfVariableString[i];
                 }
                 else
                 {
                     ListValueOfVariableDouble[i] = ListValueOfVariableDoubleDefolt[i];
+                    listButtonForVariables[i].Text = $"{ListNameOfVariableUkr[i]}: {ListValueOfVariableDouble[i]}";
+                    listButtonForVariables[i]._valueOfButton = ListValueOfVariableDouble[i];
                 }
+                textBoxEnterValue.PlaceholderText = listButtonForVariables[i]._valueOfButton.ToString();
             }
-            textBoxEnterValue.PlaceholderText = listButtonForVariables[beaconForButton]._valueOfButton.ToString();
         }
 
         private void buttonCalculate_Click(object sender, System.EventArgs e)
@@ -292,7 +237,32 @@ namespace Thermal_Engine_Calculation.App.WinForm
             _output += ListNameOfVariableUkr[77] + " = " + MainThermalEngine.LitrovaNominalPower.ToString() + "   " + "\n";
             _output += ListNameOfVariableUkr[78] + " = " + MainThermalEngine.PytomaPorshnevaPower.ToString() + "   " + "\n";
 
-            richTextBoxOutput.Text = _output;
+            if (MainThermalEngine.Pohybka >= 5)
+            {
+                Reset();
+                MessageBox.Show(
+                "Illegal argument\nНеправильно задана температура відпрацьованих газів",
+                "Неправильно задана температура відпрацьованих газів",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Stop,
+                MessageBoxDefaultButton.Button1
+                );
+            }
+            else if ((Math.Abs(MainThermalEngine.PohybkaPotuzhnostey))>5)
+            {
+                Reset();
+                MessageBox.Show(
+                "IllegalArgumentException: Прийміть інші початкові дані",
+                "Прийміть інші початкові дані",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Stop,
+                MessageBoxDefaultButton.Button1
+                );
+            }
+            else
+            {
+                richTextBoxOutput.Text = _output;
+            }
         }
 
     }
