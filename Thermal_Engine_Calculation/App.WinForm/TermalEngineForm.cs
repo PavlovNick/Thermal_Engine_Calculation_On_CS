@@ -266,5 +266,14 @@ namespace Thermal_Engine_Calculation.App.WinForm
             }
         }
 
+        private void labelNameValue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxEnterValue_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -51,9 +51,10 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForButton.AutoScroll = true;
             this.panelForButton.AutoScrollMinSize = new System.Drawing.Size(1, 0);
             this.panelForButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panelForButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panelForButton.Location = new System.Drawing.Point(0, 0);
             this.panelForButton.Name = "panelForButton";
-            this.panelForButton.Size = new System.Drawing.Size(400, 456);
+            this.panelForButton.Size = new System.Drawing.Size(500, 456);
             this.panelForButton.TabIndex = 0;
             // 
             // panelForEnter
@@ -64,17 +65,18 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForEnter.Controls.Add(this.buttonChangeValue);
             this.panelForEnter.Controls.Add(this.textBoxEnterValue);
             this.panelForEnter.Controls.Add(this.labelNameValue);
-            this.panelForEnter.Location = new System.Drawing.Point(400, 0);
+            this.panelForEnter.Location = new System.Drawing.Point(500, 0);
             this.panelForEnter.Name = "panelForEnter";
-            this.panelForEnter.Size = new System.Drawing.Size(632, 100);
+            this.panelForEnter.Size = new System.Drawing.Size(732, 100);
             this.panelForEnter.TabIndex = 1;
             // 
             // buttonChangeValue
             // 
             this.buttonChangeValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonChangeValue.Location = new System.Drawing.Point(401, 50);
+            this.buttonChangeValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonChangeValue.Location = new System.Drawing.Point(390, 52);
             this.buttonChangeValue.Name = "buttonChangeValue";
-            this.buttonChangeValue.Size = new System.Drawing.Size(94, 29);
+            this.buttonChangeValue.Size = new System.Drawing.Size(111, 29);
             this.buttonChangeValue.TabIndex = 2;
             this.buttonChangeValue.Text = "Змінити";
             this.buttonChangeValue.UseVisualStyleBackColor = true;
@@ -83,21 +85,24 @@ namespace Thermal_Engine_Calculation.App.WinForm
             // 
             this.textBoxEnterValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEnterValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxEnterValue.Location = new System.Drawing.Point(35, 52);
             this.textBoxEnterValue.Name = "textBoxEnterValue";
             this.textBoxEnterValue.PlaceholderText = "58,8";
-            this.textBoxEnterValue.Size = new System.Drawing.Size(283, 27);
+            this.textBoxEnterValue.Size = new System.Drawing.Size(316, 24);
             this.textBoxEnterValue.TabIndex = 1;
+            this.textBoxEnterValue.TextChanged += new System.EventHandler(this.textBoxEnterValue_TextChanged);
             // 
             // labelNameValue
             // 
-            this.labelNameValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelNameValue.AutoSize = true;
+            this.labelNameValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelNameValue.Location = new System.Drawing.Point(35, 9);
             this.labelNameValue.Name = "labelNameValue";
-            this.labelNameValue.Size = new System.Drawing.Size(174, 20);
+            this.labelNameValue.Size = new System.Drawing.Size(171, 18);
             this.labelNameValue.TabIndex = 0;
             this.labelNameValue.Text = "Номінальна потужність";
+            this.labelNameValue.Click += new System.EventHandler(this.labelNameValue_Click);
             // 
             // panelForResetAndCalculate
             // 
@@ -106,31 +111,32 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForResetAndCalculate.BackColor = System.Drawing.SystemColors.Highlight;
             this.panelForResetAndCalculate.Controls.Add(this.buttonCalculate);
             this.panelForResetAndCalculate.Controls.Add(this.buttonReset);
-            this.panelForResetAndCalculate.Location = new System.Drawing.Point(400, 100);
+            this.panelForResetAndCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.panelForResetAndCalculate.Location = new System.Drawing.Point(500, 100);
             this.panelForResetAndCalculate.Name = "panelForResetAndCalculate";
-            this.panelForResetAndCalculate.Size = new System.Drawing.Size(632, 100);
+            this.panelForResetAndCalculate.Size = new System.Drawing.Size(732, 100);
             this.panelForResetAndCalculate.TabIndex = 2;
             // 
             // buttonCalculate
             // 
             this.buttonCalculate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonCalculate.AutoEllipsis = true;
-            this.buttonCalculate.Location = new System.Drawing.Point(317, 41);
+            this.buttonCalculate.Location = new System.Drawing.Point(323, 41);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(178, 29);
             this.buttonCalculate.TabIndex = 1;
-            this.buttonCalculate.Text = "Calculate";
+            this.buttonCalculate.Text = "Розрахувати";
             this.buttonCalculate.UseVisualStyleBackColor = true;
             // 
             // buttonReset
             // 
             this.buttonReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonReset.AutoEllipsis = true;
-            this.buttonReset.Location = new System.Drawing.Point(80, 41);
+            this.buttonReset.Location = new System.Drawing.Point(35, 41);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(203, 29);
             this.buttonReset.TabIndex = 0;
-            this.buttonReset.Text = "Reset";
+            this.buttonReset.Text = "Скинути";
             this.buttonReset.UseVisualStyleBackColor = true;
             // 
             // panelForListing
@@ -140,9 +146,10 @@ namespace Thermal_Engine_Calculation.App.WinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelForListing.BackColor = System.Drawing.SystemColors.Info;
             this.panelForListing.Controls.Add(this.richTextBoxOutput);
-            this.panelForListing.Location = new System.Drawing.Point(400, 200);
+            this.panelForListing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panelForListing.Location = new System.Drawing.Point(500, 200);
             this.panelForListing.Name = "panelForListing";
-            this.panelForListing.Size = new System.Drawing.Size(632, 256);
+            this.panelForListing.Size = new System.Drawing.Size(732, 256);
             this.panelForListing.TabIndex = 3;
             // 
             // richTextBoxOutput
@@ -153,7 +160,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.richTextBoxOutput.Location = new System.Drawing.Point(6, 6);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
             this.richTextBoxOutput.ReadOnly = true;
-            this.richTextBoxOutput.Size = new System.Drawing.Size(514, 235);
+            this.richTextBoxOutput.Size = new System.Drawing.Size(518, 235);
             this.richTextBoxOutput.TabIndex = 0;
             this.richTextBoxOutput.Text = "";
             // 
@@ -161,11 +168,12 @@ namespace Thermal_Engine_Calculation.App.WinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 453);
+            this.ClientSize = new System.Drawing.Size(1032, 453);
             this.Controls.Add(this.panelForListing);
             this.Controls.Add(this.panelForResetAndCalculate);
             this.Controls.Add(this.panelForEnter);
             this.Controls.Add(this.panelForButton);
+            this.MinimumSize = new System.Drawing.Size(1050, 500);
             this.Name = "TermalEngineForm";
             this.Text = "Розрахунок теплового двигуна";
             this.panelForEnter.ResumeLayout(false);
