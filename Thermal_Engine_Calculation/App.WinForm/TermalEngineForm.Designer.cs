@@ -85,7 +85,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEnterValue.Location = new System.Drawing.Point(35, 52);
             this.textBoxEnterValue.Name = "textBoxEnterValue";
-            this.textBoxEnterValue.PlaceholderText = "Значення змінної";
+            this.textBoxEnterValue.PlaceholderText = "58,8";
             this.textBoxEnterValue.Size = new System.Drawing.Size(283, 27);
             this.textBoxEnterValue.TabIndex = 1;
             // 
@@ -95,7 +95,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.labelNameValue.AutoSize = true;
             this.labelNameValue.Location = new System.Drawing.Point(35, 9);
             this.labelNameValue.Name = "labelNameValue";
-            this.labelNameValue.Size = new System.Drawing.Size(97, 20);
+            this.labelNameValue.Size = new System.Drawing.Size(174, 20);
             this.labelNameValue.TabIndex = 0;
             this.labelNameValue.Text = "Номінальна потужність";
             // 
@@ -152,10 +152,10 @@ namespace Thermal_Engine_Calculation.App.WinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxOutput.Location = new System.Drawing.Point(6, 6);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
+            this.richTextBoxOutput.ReadOnly = true;
             this.richTextBoxOutput.Size = new System.Drawing.Size(514, 235);
             this.richTextBoxOutput.TabIndex = 0;
             this.richTextBoxOutput.Text = "";
-            this.richTextBoxOutput.ReadOnly = true;
             // 
             // TermalEngineForm
             // 
@@ -167,7 +167,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.Controls.Add(this.panelForEnter);
             this.Controls.Add(this.panelForButton);
             this.Name = "TermalEngineForm";
-            this.Text = "TermalEngineForm";
+            this.Text = "Розрахунок теплового двигуна";
             this.panelForEnter.ResumeLayout(false);
             this.panelForEnter.PerformLayout();
             this.panelForResetAndCalculate.ResumeLayout(false);
