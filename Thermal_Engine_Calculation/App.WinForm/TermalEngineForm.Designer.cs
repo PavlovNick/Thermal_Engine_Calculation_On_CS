@@ -97,7 +97,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.labelNameValue.Name = "labelNameValue";
             this.labelNameValue.Size = new System.Drawing.Size(97, 20);
             this.labelNameValue.TabIndex = 0;
-            this.labelNameValue.Text = "Давай падла";
+            this.labelNameValue.Text = "Номінальна потужність";
             // 
             // panelForResetAndCalculate
             // 

@@ -11,7 +11,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
 {
     public partial class TermalEngineForm : Form
     {
-        int beaconForButton = -1;
+        int beaconForButton = 2;
         ButtonForVariables[] listButtonForVariables = new ButtonForVariables[30];
         List<string> ListValueOfVariableString;
         List<string> ListValueOfVariableStringDefolt;
@@ -156,7 +156,8 @@ namespace Thermal_Engine_Calculation.App.WinForm
                     listButtonForVariables[i].Text = $"{ListNameOfVariableUkr[i]}: {ListValueOfVariableDouble[i]}";
                     listButtonForVariables[i]._valueOfButton = ListValueOfVariableDouble[i];
                 }
-                textBoxEnterValue.PlaceholderText = listButtonForVariables[i]._valueOfButton.ToString();
+                textBoxEnterValue.PlaceholderText = listButtonForVariables[beaconForButton]._valueOfButton.ToString();
+                textBoxEnterValue.Text = "";
             }
         }
 
