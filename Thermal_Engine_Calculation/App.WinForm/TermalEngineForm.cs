@@ -285,5 +285,10 @@ namespace Thermal_Engine_Calculation.App.WinForm
         {
 
         }
+
+        private void TermalEngineForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

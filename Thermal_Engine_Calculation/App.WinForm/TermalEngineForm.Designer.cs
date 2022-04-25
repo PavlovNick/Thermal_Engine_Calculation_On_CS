@@ -45,7 +45,6 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForEnter.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelForResetAndCalculate.SuspendLayout();
-            this.panelForListing.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelForButton
@@ -55,10 +54,10 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForButton.AutoScroll = true;
             this.panelForButton.AutoScrollMinSize = new System.Drawing.Size(1, 0);
             this.panelForButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panelForButton.Font = new System.Drawing.Font("SF Pro Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panelForButton.Font = new System.Drawing.Font("SF Pro Display", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panelForButton.Location = new System.Drawing.Point(0, 0);
             this.panelForButton.Name = "panelForButton";
-            this.panelForButton.Size = new System.Drawing.Size(500, 556);
+            this.panelForButton.Size = new System.Drawing.Size(297, 352);
             this.panelForButton.TabIndex = 0;
             // 
             // panelForEnter
@@ -70,9 +69,9 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForEnter.Controls.Add(this.panel1);
             this.panelForEnter.Controls.Add(this.buttonChangeValue);
             this.panelForEnter.Controls.Add(this.labelNameValue);
-            this.panelForEnter.Location = new System.Drawing.Point(500, 0);
+            this.panelForEnter.Location = new System.Drawing.Point(297, 0);
             this.panelForEnter.Name = "panelForEnter";
-            this.panelForEnter.Size = new System.Drawing.Size(882, 140);
+            this.panelForEnter.Size = new System.Drawing.Size(485, 122);
             this.panelForEnter.TabIndex = 1;
             // 
             // panel2
@@ -81,9 +80,9 @@ namespace Thermal_Engine_Calculation.App.WinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.textBoxEnterValue);
-            this.panel2.Location = new System.Drawing.Point(33, 72);
+            this.panel2.Location = new System.Drawing.Point(20, 61);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(399, 55);
+            this.panel2.Size = new System.Drawing.Size(234, 40);
             this.panel2.TabIndex = 4;
             // 
             // textBoxEnterValue
@@ -92,12 +91,12 @@ namespace Thermal_Engine_Calculation.App.WinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEnterValue.BackColor = System.Drawing.Color.White;
             this.textBoxEnterValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEnterValue.Font = new System.Drawing.Font("SF Pro Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxEnterValue.Font = new System.Drawing.Font("SF Pro Display", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxEnterValue.ForeColor = System.Drawing.Color.Black;
-            this.textBoxEnterValue.Location = new System.Drawing.Point(1, 18);
+            this.textBoxEnterValue.Location = new System.Drawing.Point(2, 12);
             this.textBoxEnterValue.Name = "textBoxEnterValue";
             this.textBoxEnterValue.PlaceholderText = "58,8";
-            this.textBoxEnterValue.Size = new System.Drawing.Size(393, 20);
+            this.textBoxEnterValue.Size = new System.Drawing.Size(229, 16);
             this.textBoxEnterValue.TabIndex = 1;
             this.textBoxEnterValue.TextChanged += new System.EventHandler(this.textBoxEnterValue_TextChanged);
             // 
@@ -106,9 +105,9 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(32, 71);
+            this.panel1.Location = new System.Drawing.Point(19, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(401, 57);
+            this.panel1.Size = new System.Drawing.Size(236, 42);
             this.panel1.TabIndex = 3;
             // 
             // buttonChangeValue
@@ -116,11 +115,11 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.buttonChangeValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonChangeValue.BackColor = System.Drawing.Color.White;
             this.buttonChangeValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonChangeValue.Font = new System.Drawing.Font("SF Pro Display", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonChangeValue.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonChangeValue.ForeColor = System.Drawing.Color.Black;
-            this.buttonChangeValue.Location = new System.Drawing.Point(463, 71);
+            this.buttonChangeValue.Location = new System.Drawing.Point(265, 59);
             this.buttonChangeValue.Name = "buttonChangeValue";
-            this.buttonChangeValue.Size = new System.Drawing.Size(196, 57);
+            this.buttonChangeValue.Size = new System.Drawing.Size(196, 42);
             this.buttonChangeValue.TabIndex = 2;
             this.buttonChangeValue.Text = "Змінити";
             this.buttonChangeValue.UseVisualStyleBackColor = false;
@@ -129,10 +128,10 @@ namespace Thermal_Engine_Calculation.App.WinForm
             // labelNameValue
             // 
             this.labelNameValue.AutoSize = true;
-            this.labelNameValue.Font = new System.Drawing.Font("SF Pro Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNameValue.Location = new System.Drawing.Point(29, 21);
+            this.labelNameValue.Font = new System.Drawing.Font("SF Pro Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelNameValue.Location = new System.Drawing.Point(19, 15);
             this.labelNameValue.Name = "labelNameValue";
-            this.labelNameValue.Size = new System.Drawing.Size(218, 24);
+            this.labelNameValue.Size = new System.Drawing.Size(187, 20);
             this.labelNameValue.TabIndex = 0;
             this.labelNameValue.Text = "Номінальна потужність";
             this.labelNameValue.Click += new System.EventHandler(this.labelNameValue_Click);
@@ -145,9 +144,9 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.panelForResetAndCalculate.Controls.Add(this.buttonCalculate);
             this.panelForResetAndCalculate.Controls.Add(this.buttonReset);
             this.panelForResetAndCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.panelForResetAndCalculate.Location = new System.Drawing.Point(500, 140);
+            this.panelForResetAndCalculate.Location = new System.Drawing.Point(297, 122);
             this.panelForResetAndCalculate.Name = "panelForResetAndCalculate";
-            this.panelForResetAndCalculate.Size = new System.Drawing.Size(882, 125);
+            this.panelForResetAndCalculate.Size = new System.Drawing.Size(485, 61);
             this.panelForResetAndCalculate.TabIndex = 2;
             // 
             // buttonCalculate
@@ -157,11 +156,11 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.buttonCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(113)))), ((int)(((byte)(211)))));
             this.buttonCalculate.FlatAppearance.BorderSize = 0;
             this.buttonCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCalculate.Font = new System.Drawing.Font("SF Pro Display", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCalculate.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonCalculate.ForeColor = System.Drawing.Color.White;
-            this.buttonCalculate.Location = new System.Drawing.Point(378, 30);
+            this.buttonCalculate.Location = new System.Drawing.Point(231, 3);
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(230, 57);
+            this.buttonCalculate.Size = new System.Drawing.Size(230, 42);
             this.buttonCalculate.TabIndex = 1;
             this.buttonCalculate.Text = "Розрахувати";
             this.buttonCalculate.UseVisualStyleBackColor = false;
@@ -172,11 +171,11 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.buttonReset.AutoEllipsis = true;
             this.buttonReset.BackColor = System.Drawing.Color.White;
             this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReset.Font = new System.Drawing.Font("SF Pro Display", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonReset.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonReset.ForeColor = System.Drawing.Color.Black;
-            this.buttonReset.Location = new System.Drawing.Point(94, 30);
+            this.buttonReset.Location = new System.Drawing.Point(19, 3);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(203, 57);
+            this.buttonReset.Size = new System.Drawing.Size(203, 42);
             this.buttonReset.TabIndex = 0;
             this.buttonReset.Text = "Скинути";
             this.buttonReset.UseVisualStyleBackColor = false;
@@ -187,11 +186,10 @@ namespace Thermal_Engine_Calculation.App.WinForm
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelForListing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.panelForListing.Controls.Add(this.richTextBoxOutput);
             this.panelForListing.Font = new System.Drawing.Font("SF Pro Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panelForListing.Location = new System.Drawing.Point(500, 270);
+            this.panelForListing.Location = new System.Drawing.Point(297, 189);
             this.panelForListing.Name = "panelForListing";
-            this.panelForListing.Size = new System.Drawing.Size(882, 286);
+            this.panelForListing.Size = new System.Drawing.Size(485, 163);
             this.panelForListing.TabIndex = 3;
             // 
             // richTextBoxOutput
@@ -201,10 +199,11 @@ namespace Thermal_Engine_Calculation.App.WinForm
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxOutput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.richTextBoxOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxOutput.Location = new System.Drawing.Point(31, 26);
+            this.richTextBoxOutput.Font = new System.Drawing.Font("SF Pro Display", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.richTextBoxOutput.Location = new System.Drawing.Point(317, 203);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
             this.richTextBoxOutput.ReadOnly = true;
-            this.richTextBoxOutput.Size = new System.Drawing.Size(642, 245);
+            this.richTextBoxOutput.Size = new System.Drawing.Size(453, 149);
             this.richTextBoxOutput.TabIndex = 0;
             this.richTextBoxOutput.Text = "";
             this.richTextBoxOutput.TextChanged += new System.EventHandler(this.richTextBoxOutput_TextChanged);
@@ -214,22 +213,23 @@ namespace Thermal_Engine_Calculation.App.WinForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1182, 553);
+            this.ClientSize = new System.Drawing.Size(782, 353);
+            this.Controls.Add(this.richTextBoxOutput);
             this.Controls.Add(this.panelForListing);
             this.Controls.Add(this.panelForResetAndCalculate);
             this.Controls.Add(this.panelForEnter);
             this.Controls.Add(this.panelForButton);
             this.Font = new System.Drawing.Font("SF Pro Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1200, 500);
+            this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "TermalEngineForm";
             this.Text = "Розрахунок теплового двигуна";
+            this.Load += new System.EventHandler(this.TermalEngineForm_Load);
             this.panelForEnter.ResumeLayout(false);
             this.panelForEnter.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelForResetAndCalculate.ResumeLayout(false);
-            this.panelForListing.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
