@@ -29,6 +29,7 @@ namespace Thermal_Engine_Calculation.App.WinForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TermalEngineForm));
             this.panelForButton = new System.Windows.Forms.Panel();
             this.panelForEnter = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -210,15 +211,16 @@ namespace Thermal_Engine_Calculation.App.WinForm
             // 
             // TermalEngineForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Font = new System.Drawing.Font("SF Pro Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ClientSize = new System.Drawing.Size(1182, 553);
             this.Controls.Add(this.panelForListing);
             this.Controls.Add(this.panelForResetAndCalculate);
             this.Controls.Add(this.panelForEnter);
             this.Controls.Add(this.panelForButton);
+            this.Font = new System.Drawing.Font("SF Pro Display", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 500);
             this.Name = "TermalEngineForm";
             this.Text = "Розрахунок теплового двигуна";
