@@ -275,5 +275,15 @@ namespace Thermal_Engine_Calculation.App.WinForm
         {
 
         }
+
+        private void buttonChangeValue_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBoxOutput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

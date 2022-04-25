@@ -12,11 +12,15 @@ namespace Thermal_Engine_Calculation.App.WinForm
         public object _valueOfButton;
         public ButtonForVariables():base()
         {
-            base.BackColor = System.Drawing.Color.FromArgb(0, 102, 204);
-            base.FontHeight = 12;
-            base.ForeColor = System.Drawing.Color.FromArgb(255, 255, 255);
-            base.Height = 45;
+            base.BackColor = System.Drawing.Color.FromArgb(255, 255, 255);
+            base.FontHeight = 23;
+            base.ForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            base.Height = 57;
             base.FlatStyle = FlatStyle.Flat;
+            base.FlatAppearance.BorderSize = 1;
+            base.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(233, 233, 233);
+            base.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            base.Padding = new Padding(28, 0, 0, 0);
         }
     }
 }
