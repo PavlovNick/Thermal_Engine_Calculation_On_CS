@@ -18,3 +18,9 @@ A video demonstrating the operation of the program has been added to the reposit
 
 https://user-images.githubusercontent.com/59102842/209549102-6bb00c65-38e3-4061-b02a-d98cb8f93364.mp4
 
+#### Future plans
+
+- Rewrite the program using a three-level architecture  
+- Make a more advanced responsive design
+- Make it possible to choose the interface language (Ukrainian, English, Russian)
+- Cover the program with unit-testing
