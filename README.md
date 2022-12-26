@@ -6,8 +6,6 @@ The program was written for the Department of tractors and cars of Vinnitsa Nati
 
 - This program is written with WinForms (C# GUI)
 
-- The program has a responsive design
-
 #### The view:
 
 ![program view](Робота_програми.jpg)
